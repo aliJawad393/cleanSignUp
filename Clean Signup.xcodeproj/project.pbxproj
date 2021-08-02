@@ -12,7 +12,7 @@
 		F1B03E74268DE3F3008A7971 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E73268DE3F3008A7971 /* SignUpViewController.swift */; };
 		F1B03E79268DE3F5008A7971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B03E78268DE3F5008A7971 /* Assets.xcassets */; };
 		F1B03E7C268DE3F5008A7971 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B03E7A268DE3F5008A7971 /* LaunchScreen.storyboard */; };
-		F1B03E87268DE3F5008A7971 /* Clean_SignupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E86268DE3F5008A7971 /* Clean_SignupTests.swift */; };
+		F1B03E87268DE3F5008A7971 /* UserCredentialsBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E86268DE3F5008A7971 /* UserCredentialsBuilderTests.swift */; };
 		F1B03E92268DE3F5008A7971 /* Clean_SignupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E91268DE3F5008A7971 /* Clean_SignupUITests.swift */; };
 		F1B03EAF268DE5BC008A7971 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03EAE268DE5BC008A7971 /* CustomTextField.swift */; };
 		F1B03EB5268DE662008A7971 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03EB4268DE662008A7971 /* UIFont+Ext.swift */; };
@@ -70,7 +70,7 @@
 		F1B03E7B268DE3F5008A7971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1B03E7D268DE3F5008A7971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1B03E82268DE3F5008A7971 /* Clean SignupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clean SignupTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1B03E86268DE3F5008A7971 /* Clean_SignupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clean_SignupTests.swift; sourceTree = "<group>"; };
+		F1B03E86268DE3F5008A7971 /* UserCredentialsBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsBuilderTests.swift; sourceTree = "<group>"; };
 		F1B03E88268DE3F5008A7971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1B03E8D268DE3F5008A7971 /* Clean SignupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clean SignupUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B03E91268DE3F5008A7971 /* Clean_SignupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clean_SignupUITests.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 		F1B03E85268DE3F5008A7971 /* Clean SignupTests */ = {
 			isa = PBXGroup;
 			children = (
-				F1B03E86268DE3F5008A7971 /* Clean_SignupTests.swift */,
+				F1B03E86268DE3F5008A7971 /* UserCredentialsBuilderTests.swift */,
 				F1B03E88268DE3F5008A7971 /* Info.plist */,
 			);
 			path = "Clean SignupTests";
@@ -448,7 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B03E87268DE3F5008A7971 /* Clean_SignupTests.swift in Sources */,
+				F1B03E87268DE3F5008A7971 /* UserCredentialsBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

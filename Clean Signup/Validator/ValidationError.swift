@@ -1,12 +1,12 @@
 import Foundation
 
-enum ValidationError: Error {
+enum ValidationError: Error, Equatable {
     case empty(String)
     case invalidFormat(String)
     case notTicked(String)
 }
 
-enum PasswordValidationError: Error {
+enum PasswordValidationError: Error, Equatable {
     case length(Int)
     case missingUppercase
     case missingLowercase
