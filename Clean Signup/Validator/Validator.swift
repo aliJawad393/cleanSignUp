@@ -1,6 +1,6 @@
 import Foundation
 
-protocol Validator {
+public protocol Validator {
     func validate(_ value: String) -> Result<String, Error>
 }
 

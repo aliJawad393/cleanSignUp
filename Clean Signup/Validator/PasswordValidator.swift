@@ -16,38 +16,41 @@ struct PasswordLengthValidator: Validator {
     }
 }
 
-struct PasswordIncludesUppercaseValidator: Validator {
-    func validate(_ value: String) -> Result<String, Error> {
+public struct PasswordIncludesUppercaseValidator: Validator {
+    public init(){}
+    public func validate(_ value: String) -> Result<String, Error> {
         return value.rangeOfCharacter(from: NSCharacterSet.uppercaseLetters) != nil ?
             .success(value) :
             .failure(PasswordValidationError.missingUppercase)
     }
 }
 
-struct PasswordIncludesLowercaseValidator: Validator {
-    func validate(_ value: String) -> Result<String, Error> {
+public struct PasswordIncludesLowercaseValidator: Validator {
+    public init(){}
+    public func validate(_ value: String) -> Result<String, Error> {
         return value.rangeOfCharacter(from: NSCharacterSet.lowercaseLetters) != nil ?
             .success(value) :
             .failure(PasswordValidationError.missingLowercase)
     }
 }
 
-struct PasswordIncludesNumbersValidator: Validator {
-    func validate(_ value: String) -> Result<String, Error> {
+public struct PasswordIncludesNumbersValidator: Validator {
+    public init(){}
+    public func validate(_ value: String) -> Result<String, Error> {
         return value.rangeOfCharacter(from: NSCharacterSet.decimalDigits) != nil ?
             .success(value) :
             .failure(PasswordValidationError.missingNumber)
     }
 }
 
-struct ConfirmPasswordMatchValidator: Validator {
+public struct ConfirmPasswordMatchValidator: Validator {
     private let password: String
     
-    init(password: String) {
+    public init(password: String) {
         self.password = password
     }
     
-    func validate(_ value: String) -> Result<String, Error> {
+    public func validate(_ value: String) -> Result<String, Error> {
         return value == password ? .success(value) : .failure(PasswordValidationError.mismatch)
     }
 }

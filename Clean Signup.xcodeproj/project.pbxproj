@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F144F71C26BC1A98007AD68B /* PasswordValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144F71B26BC1A98007AD68B /* PasswordValidatorTests.swift */; };
 		F1B03E70268DE3F3008A7971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E6F268DE3F3008A7971 /* AppDelegate.swift */; };
 		F1B03E72268DE3F3008A7971 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E71268DE3F3008A7971 /* SceneDelegate.swift */; };
 		F1B03E74268DE3F3008A7971 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E73268DE3F3008A7971 /* SignUpViewController.swift */; };
@@ -37,6 +38,7 @@
 		F1B03EE8268DE87A008A7971 /* UserCredentialsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03EE7268DE87A008A7971 /* UserCredentialsBuilder.swift */; };
 		F1B03EF0268DE8AB008A7971 /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03EEF268DE8AB008A7971 /* UserCredentials.swift */; };
 		F1B03EFD268DE9AB008A7971 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03EFC268DE9AB008A7971 /* UIViewController+Ext.swift */; };
+		F1BA9EE126B94F6700E4C35A /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BA9EE026B94F6700E4C35A /* ValidatorTests.swift */; };
 		F1BDB07B26920A460017484C /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDB07A26920A460017484C /* Validator.swift */; };
 		F1BDB08326920A8D0017484C /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDB08226920A8D0017484C /* ValidationError.swift */; };
 		F1BDB08826920AB00017484C /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BDB08726920AB00017484C /* EmailValidator.swift */; };
@@ -62,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F144F71B26BC1A98007AD68B /* PasswordValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorTests.swift; sourceTree = "<group>"; };
 		F1B03E6C268DE3F3008A7971 /* Clean Signup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clean Signup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B03E6F268DE3F3008A7971 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1B03E71268DE3F3008A7971 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 		F1B03EE7268DE87A008A7971 /* UserCredentialsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsBuilder.swift; sourceTree = "<group>"; };
 		F1B03EEF268DE8AB008A7971 /* UserCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
 		F1B03EFC268DE9AB008A7971 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		F1BA9EE026B94F6700E4C35A /* ValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
 		F1BDB07A26920A460017484C /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		F1BDB08226920A8D0017484C /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		F1BDB08726920AB00017484C /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -168,7 +172,9 @@
 		F1B03E85268DE3F5008A7971 /* Clean SignupTests */ = {
 			isa = PBXGroup;
 			children = (
+				F1BA9EE026B94F6700E4C35A /* ValidatorTests.swift */,
 				F1B03E86268DE3F5008A7971 /* UserCredentialsBuilderTests.swift */,
+				F144F71B26BC1A98007AD68B /* PasswordValidatorTests.swift */,
 				F1B03E88268DE3F5008A7971 /* Info.plist */,
 			);
 			path = "Clean SignupTests";
@@ -448,7 +454,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1BA9EE126B94F6700E4C35A /* ValidatorTests.swift in Sources */,
 				F1B03E87268DE3F5008A7971 /* UserCredentialsBuilderTests.swift in Sources */,
+				F144F71C26BC1A98007AD68B /* PasswordValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
