@@ -5,7 +5,7 @@ final class SignUpViewController: UIViewController {
     
     //MARK: Vars
     private var builder: CredentialsBuilder
-    private let signUpBlock: (UserCredentials)->()
+    private let signUpBlock: (CredentialsBuilder)->()
     
     //MARK: View component
     private lazy var stackViewContent: UIStackView = {
@@ -152,7 +152,7 @@ final class SignUpViewController: UIViewController {
     }()
     
     //MARK: Init
-    init(builder: CredentialsBuilder, signUpBlock: @escaping(UserCredentials)->()) {
+    init(builder: CredentialsBuilder, signUpBlock: @escaping(CredentialsBuilder)->()) {
         self.builder = builder
         self.signUpBlock = signUpBlock
         super.init(nibName: nil, bundle: nil)
@@ -195,12 +195,7 @@ final class SignUpViewController: UIViewController {
     //MARK: Action
     @objc func submitHandler(sender: UIButton) {
         view.endEditing(true)
-        do {
-            let credentials = try builder.build()
-            signUpBlock(credentials)
-        } catch let error {
-            alert("Error", message: error.localizedDescription)
-        }
+        signUpBlock(builder)
     }
     
     @objc func helpHandler(sender: UIButton) {

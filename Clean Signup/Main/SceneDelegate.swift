@@ -7,9 +7,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = SignUpViewController(builder: UserCrendentialsBuilder(), signUpBlock: { user in
-            print("Signup was successful \(user)")
+        let builder = UserCrendentialsBuilder()
+        let navController = UINavigationController()
+        navController.navigationBar.isHidden = true
+        let controller =  SignUpViewController(builder: builder, signUpBlock: {[weak navController] modifiedBuilder in
+            do {
+                let _ = try modifiedBuilder.build()
+                navController?.topViewController?.alert("Success", message: "Entered info was valid")
+            } catch(let error) {
+                navController?.topViewController?.alert("Error", message: error.localizedDescription)
+            }
         })
+        navController.viewControllers = [controller]
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }
 }
