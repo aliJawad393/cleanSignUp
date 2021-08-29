@@ -33,7 +33,7 @@ final class SignUpViewController: UIViewController {
         return view
     }()
     
-    private lazy var buttonSignUp: UIButton = {
+    private(set) lazy var buttonSignUp: UIButton = {
         let view = UIButton(type: .system)
         view.backgroundColor = UIColor(red: 0.71, green: 0.408, blue: 0.231, alpha: 1)
         view.setTitle("Sign Up", for: .normal)
@@ -57,7 +57,7 @@ final class SignUpViewController: UIViewController {
         return view
     }()
     
-    private lazy var textFieldName: UITextField = {
+    private(set) lazy var textFieldName: UITextField = {
         let view = CustomTextField {[weak self] text in
             self?.builder.setName(name: text)
         }
@@ -67,7 +67,7 @@ final class SignUpViewController: UIViewController {
         return view
     }()
     
-    private lazy var textFieldEmail: UITextField = {
+    private(set) lazy var textFieldEmail: UITextField = {
         let view = CustomTextField{[weak self] text in
             do {
                 try self?.builder.setEmail(email: text)
@@ -81,7 +81,7 @@ final class SignUpViewController: UIViewController {
         return view
     }()
     
-    private lazy var textFieldPassword: UITextField = {
+    private(set) lazy var textFieldPassword: UITextField = {
         let view = CustomTextField{[weak self] text in
             do {
                 try self?.builder.setPassword(password: text)
@@ -94,7 +94,7 @@ final class SignUpViewController: UIViewController {
         return view
     }()
     
-    private lazy var textFieldConfirmPassword: UITextField = {
+    private(set) lazy var textFieldConfirmPassword: UITextField = {
         let view = CustomTextField{[weak self] text in
             do {
                 try self?.builder.setConfirmPassword(password: text)
@@ -131,7 +131,7 @@ final class SignUpViewController: UIViewController {
         return view
     }()
     
-    private lazy var termsConditionsCheckBox: UIButton = {
+    private(set) lazy var termsConditionsCheckBox: UIButton = {
         let view = UIButton(type: .custom)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setImage(UIImage.init(named: "iconCheckboxOutlined"), for: .normal)
@@ -156,6 +156,12 @@ final class SignUpViewController: UIViewController {
         self.builder = builder
         self.signUpBlock = signUpBlock
         super.init(nibName: nil, bundle: nil)
+        setupView()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
+
     }
     
     private init() {
@@ -169,11 +175,6 @@ final class SignUpViewController: UIViewController {
     //MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
     }
     
     deinit {

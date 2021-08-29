@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F144F71C26BC1A98007AD68B /* PasswordValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144F71B26BC1A98007AD68B /* PasswordValidatorTests.swift */; };
+		F15EDDD726C704680040EA42 /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15EDDD626C704680040EA42 /* SignUpViewControllerTests.swift */; };
 		F1B03E70268DE3F3008A7971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E6F268DE3F3008A7971 /* AppDelegate.swift */; };
 		F1B03E72268DE3F3008A7971 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E71268DE3F3008A7971 /* SceneDelegate.swift */; };
 		F1B03E74268DE3F3008A7971 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E73268DE3F3008A7971 /* SignUpViewController.swift */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		F144F71B26BC1A98007AD68B /* PasswordValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorTests.swift; sourceTree = "<group>"; };
+		F15EDDD626C704680040EA42 /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		F1B03E6C268DE3F3008A7971 /* Clean Signup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clean Signup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B03E6F268DE3F3008A7971 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1B03E71268DE3F3008A7971 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				F1BA9EE026B94F6700E4C35A /* ValidatorTests.swift */,
 				F1B03E86268DE3F5008A7971 /* UserCredentialsBuilderTests.swift */,
 				F144F71B26BC1A98007AD68B /* PasswordValidatorTests.swift */,
+				F15EDDD626C704680040EA42 /* SignUpViewControllerTests.swift */,
 				F1B03E88268DE3F5008A7971 /* Info.plist */,
 			);
 			path = "Clean SignupTests";
@@ -456,6 +459,7 @@
 			files = (
 				F1BA9EE126B94F6700E4C35A /* ValidatorTests.swift in Sources */,
 				F1B03E87268DE3F5008A7971 /* UserCredentialsBuilderTests.swift in Sources */,
+				F15EDDD726C704680040EA42 /* SignUpViewControllerTests.swift in Sources */,
 				F144F71C26BC1A98007AD68B /* PasswordValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

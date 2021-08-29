@@ -31,9 +31,11 @@ final class CustomTextField: UITextField, UITextFieldDelegate {
         attributedPlaceholder = NSAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor : UIColor(red: 0.329, green: 0.329, blue: 0.329, alpha: 1)])
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         endEditingBlock?(textField.text ?? "")
     }
+    
+    
     
     override func textRect(forBounds bounds: CGRect) -> CGRect {
         return CGRect(
