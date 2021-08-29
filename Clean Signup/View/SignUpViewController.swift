@@ -123,7 +123,6 @@ final class SignUpViewController: UIViewController {
         let attributedTitle = NSMutableAttributedString(string: " Terms and Conditions*",
                                                         attributes: attributes)
         buttonTnC.setAttributedTitle(attributedTitle, for: .normal)
-        buttonTnC.addTarget(self, action: #selector(termsHandler(sender:)), for: .touchUpInside)
         
         view.addArrangedSubview(termsConditionsCheckBox)
         view.addArrangedSubview(buttonTnC)
@@ -141,14 +140,6 @@ final class SignUpViewController: UIViewController {
         view.setTitleColor(UIColor(red: 0.329, green: 0.329, blue: 0.329, alpha: 1), for: .normal)
         view.titleLabel?.font = UIFont.montserratRegular.withAdjustableSize(9)
         return view
-    }()
-    
-    private lazy var loadingIndicator: UIActivityIndicatorView = {
-        let indicatorView = UIActivityIndicatorView(style: .large)
-        indicatorView.color = .gray
-        indicatorView.hidesWhenStopped = true
-        indicatorView.translatesAutoresizingMaskIntoConstraints = false
-        return indicatorView
     }()
     
     //MARK: Init
@@ -199,23 +190,10 @@ final class SignUpViewController: UIViewController {
         signUpBlock(builder)
     }
     
-    @objc func helpHandler(sender: UIButton) {
-        
-    }
-    
-    @objc func signInHandler(sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
     
     @objc func toggleCheckboxSelection() {
         termsConditionsCheckBox.isSelected = !termsConditionsCheckBox.isSelected
         builder.setTicked(isTicked: termsConditionsCheckBox.isSelected)
-    }
-    
-    @objc func termsHandler(sender: UIButton) {
-        if let url = URL(string: "https://www.facebook.com/terms.php"){
-            present(SFSafariViewController(url: url), animated: true, completion: nil)
-        }
     }
     
     //MARK: Helpers
@@ -243,20 +221,11 @@ final class SignUpViewController: UIViewController {
     }
 }
 
-//MARK: Helper
-private extension SignUpViewController {
-    private func displayLoadingIndicator(_ loading: Bool) {
-        view.isUserInteractionEnabled = !loading
-        loading ? loadingIndicator.startAnimating() : loadingIndicator.stopAnimating()
-    }
-}
-
 //MARK: Setup View
 private extension SignUpViewController {
     private func setupView() {
         view.backgroundColor = UIColor(red: 0.063, green: 0.063, blue: 0.063, alpha: 1)
         view.addSubview(stackViewContent)
-        view.addSubview(loadingIndicator)
         layoutSubviews()
     }
     
@@ -266,9 +235,6 @@ private extension SignUpViewController {
             stackViewContent.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             stackViewContent.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             NSLayoutConstraint(item: stackViewContent, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 0.8, constant: 0),
-                                                
-            loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
 }

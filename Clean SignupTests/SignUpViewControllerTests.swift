@@ -40,7 +40,8 @@ class SignUpViewControllerTests: XCTestCase {
         sut.submitHandler(sender: UIButton())
     }
     
-    func test_selectCheckBox_reflectsValueToBuilder() {
+    
+    func test_selectUnselectCheckBox_reflectsValueToBuilder() {
         let spyBuilder = SpyCredentialsBuilder()
         let sut = makeSUT(builder: spyBuilder) {_ in}
         XCTAssertFalse(spyBuilder.isTicked)
