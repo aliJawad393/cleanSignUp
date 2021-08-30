@@ -187,7 +187,7 @@ final class SignUpViewController: UIViewController {
     //MARK: Action
     @objc func submitHandler(sender: UIButton) {
         view.endEditing(true)
-        //signUpBlock(builder)
+        signUpBlock(builder)
     }
     
     
