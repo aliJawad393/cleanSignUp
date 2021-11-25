@@ -5,17 +5,20 @@ import XCTest
 class SignUpViewControllerTests: XCTestCase {
     func test_defaultState_uiElementsAreInInitialState() {
         let sut = makeSUT()
-        XCTAssertTrue(sut.textFieldName.text == "")
-        XCTAssertTrue(sut.textFieldEmail.text == "")
-        XCTAssertTrue(sut.textFieldPassword.text == "")
-        XCTAssertTrue(sut.textFieldConfirmPassword.text == "")
-        XCTAssertTrue(sut.termsConditionsCheckBox.state == .normal)
+        
+        XCTAssertEqual(sut.textFieldName.text, "")
+        XCTAssertEqual(sut.textFieldName.text, "")
+        XCTAssertEqual(sut.textFieldEmail.text, "")
+        XCTAssertEqual(sut.textFieldPassword.text, "")
+        XCTAssertEqual(sut.textFieldConfirmPassword.text, "")
+        XCTAssertEqual(sut.termsConditionsCheckBox.state, .normal)
         XCTAssertTrue(sut.buttonSignUp.isEnabled)
 
     }
 
     func test_defaultState_placeholderForTextFieldsAreSet() {
         let sut = makeSUT()
+        
         XCTAssertEqual(sut.textFieldName.placeholder, "Name")
         XCTAssertEqual(sut.textFieldEmail.placeholder, "Email Address")
         XCTAssertEqual(sut.textFieldPassword.placeholder, "Password")
@@ -27,6 +30,7 @@ class SignUpViewControllerTests: XCTestCase {
         let sut = makeSUT(builder: spyBuilder) {_ in}
         let window = UIWindow()
         window.addSubview(sut.view)
+        
         uitextfield_setText_makeAndResignFirstResponser(textField: sut.textFieldName, text: "Full Name")
         uitextfield_setText_makeAndResignFirstResponser(textField: sut.textFieldEmail, text: "test@email.com")
         uitextfield_setText_makeAndResignFirstResponser(textField: sut.textFieldPassword, text: "password")
@@ -36,14 +40,13 @@ class SignUpViewControllerTests: XCTestCase {
         XCTAssertEqual(spyBuilder.email, "test@email.com")
         XCTAssertEqual(spyBuilder.password, "password")
         XCTAssertEqual(spyBuilder.confirmPassword, "confirmPassword")
-
-        sut.submitHandler(sender: UIButton())
     }
     
     
     func test_selectUnselectCheckBox_reflectsValueToBuilder() {
         let spyBuilder = SpyCredentialsBuilder()
         let sut = makeSUT(builder: spyBuilder) {_ in}
+        
         XCTAssertFalse(spyBuilder.isTicked)
         sut.toggleCheckboxSelection()
         XCTAssertTrue(spyBuilder.isTicked)
@@ -55,7 +58,9 @@ class SignUpViewControllerTests: XCTestCase {
         let sut = makeSUT(builder: DummyCredentialsBuilder()) { _ in
             count = count + 1
         }
+        
         sut.submitHandler(sender: UIButton())
+        
         XCTAssertEqual(count, 1)
     }
     
@@ -64,13 +69,16 @@ class SignUpViewControllerTests: XCTestCase {
         builder.setName(name: "Clean Signup")
         try! builder.setEmail(email: "clean@signup.com")
         try! builder.setPassword(password: "Password")
+        var userCredentials: UserCredentials?
+        
         let sut = makeSUT(builder: builder) { modified in
-            let userCredentials = try? modified.build()
-            XCTAssertEqual(userCredentials?.name, "Clean Signup")
-            XCTAssertEqual(userCredentials?.email, "clean@signup.com")
-            XCTAssertEqual(userCredentials?.password, "Password")
+            userCredentials = try? modified.build()
         }
         sut.submitHandler(sender: UIButton())
+        
+        XCTAssertEqual(userCredentials?.name, "Clean Signup")
+        XCTAssertEqual(userCredentials?.email, "clean@signup.com")
+        XCTAssertEqual(userCredentials?.password, "Password")
     }
     
     //MARK: Private Helpers

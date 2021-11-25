@@ -97,9 +97,11 @@ class UserCredentialsBuilderTests: XCTestCase {
     
     func test_correctFormInput_doesNotThrow() {
         var sut =  makeSUT(email:  correctFormatEmail())
+        
         try? sut.setPassword(password: correctPassword())
         try? sut.setConfirmPassword(password: correctPassword())
         sut.setTicked(isTicked: true)
+        
         XCTAssertNoThrow(try sut.build())
     }
         

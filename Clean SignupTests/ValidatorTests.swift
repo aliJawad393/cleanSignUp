@@ -15,6 +15,7 @@ class ValidatorTests: XCTestCase {
     
     func test_validator_emailFormator() {
         let sut = EmailFormatValidator()
+        
         assertFailure(sut.validate(""), expectedError: ValidationError.invalidFormat("Email"))
         assertFailure(sut.validate("invalidEmail"), expectedError: ValidationError.invalidFormat("Email"))
         assertFailure(sut.validate("invalid@email"), expectedError: ValidationError.invalidFormat("Email"))
@@ -26,7 +27,7 @@ class ValidatorTests: XCTestCase {
     private func assertFailure(_ result: Result<String, Error>, expectedError: ValidationError) {
         switch result {
         case .failure(let error as ValidationError):
-            XCTAssertEqual(expectedError, error)
+            XCTAssertEqual(error, expectedError)
         case .success(let value):
             XCTFail("Expected to be a failure but got a success with \(value)")
         default:

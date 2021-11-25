@@ -12,6 +12,7 @@ class PasswordValidatorTests: XCTestCase {
     
     func test_validator_passwordIncludesUpperCase() {
         let sut = PasswordIncludesUppercaseValidator()
+        
         assertFailure(sut.validate(""), expectedError: PasswordValidationError.missingUppercase)
         assertFailure(sut.validate("[]_?-/*||"), expectedError: PasswordValidationError.missingUppercase)
         assertFailure(sut.validate("123"), expectedError: PasswordValidationError.missingUppercase)
@@ -21,6 +22,7 @@ class PasswordValidatorTests: XCTestCase {
     
     func test_validator_passwordIncludesLowerCase() {
         let sut = PasswordIncludesLowercaseValidator()
+        
         assertFailure(sut.validate(""), expectedError: PasswordValidationError.missingLowercase)
         assertFailure(sut.validate("[]_?-/*||"), expectedError: PasswordValidationError.missingLowercase)
         assertFailure(sut.validate("123"), expectedError: PasswordValidationError.missingLowercase)
@@ -30,6 +32,7 @@ class PasswordValidatorTests: XCTestCase {
     
     func test_validator_passwordIncludesNumber() {
         let sut = PasswordIncludesNumbersValidator()
+        
         assertFailure(sut.validate(""), expectedError: PasswordValidationError.missingNumber)
         assertFailure(sut.validate("[]_?-/*||"), expectedError: PasswordValidationError.missingNumber)
         assertFailure(sut.validate("abc"), expectedError: PasswordValidationError.missingNumber)
@@ -39,6 +42,7 @@ class PasswordValidatorTests: XCTestCase {
     
     func test_validator_passwordMatchesConfirmPassword() {
         let sut = ConfirmPasswordMatchValidator(password: "123")
+        
         assertFailure(sut.validate(""), expectedError: PasswordValidationError.mismatch)
         assertFailure(sut.validate("12"), expectedError: PasswordValidationError.mismatch)
         assertFailure(sut.validate("124"), expectedError: PasswordValidationError.mismatch)
@@ -48,7 +52,7 @@ class PasswordValidatorTests: XCTestCase {
     private func assertFailure(_ result: Result<String, Error>, expectedError: PasswordValidationError) {
         switch result {
         case .failure(let error as PasswordValidationError):
-            XCTAssertEqual(expectedError, error)
+            XCTAssertEqual(error, expectedError)
         case .success(let value):
             XCTFail("Expected to be a failure but got a success with \(value)")
         default:
