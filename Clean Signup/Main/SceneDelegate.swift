@@ -10,15 +10,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let builder = UserCrendentialsBuilder()
         let navController = UINavigationController()
         navController.navigationBar.isHidden = true
-        let controller =  SignUpViewController(builder: builder, signUpBlock: {[weak navController] modifiedBuilder in
-            do {
-                let _ = try modifiedBuilder.build()
-                navController?.topViewController?.alert("Success", message: "Entered info was valid")
-            } catch(let error) {
-                navController?.topViewController?.alert("Error", message: error.localizedDescription)
-            }
-        })
-        navController.viewControllers = [controller]
+       let factory = iOSViewControllerFactory()
+        
+        navController.viewControllers = [factory.createSignupViewController(builder: builder)]
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
     }

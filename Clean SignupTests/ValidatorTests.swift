@@ -8,12 +8,12 @@
 import XCTest
 import Clean_Signup
 
-class ValidatorTests: XCTestCase {
+final class ValidatorTests: XCTestCase {
     func test_validator_string_empty(){
         assertFailure(EmptyValidator(title: "empty-test").validate(""), expectedError: ValidationError.empty("empty-test"))
     }
     
-    func test_validator_emailFormator() {
+    func test_emailFormatterValidator_withCorrectAndIncorrectFormats() {
         let sut = EmailFormatValidator()
         
         assertFailure(sut.validate(""), expectedError: ValidationError.invalidFormat("Email"))
