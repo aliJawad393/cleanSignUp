@@ -24,4 +24,3 @@ import iOSSnapshotTestCase
          FBSnapshotVerifyViewController(sut)
      }
  }
-
