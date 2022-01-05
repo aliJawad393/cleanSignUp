@@ -1,11 +1,33 @@
 import UIKit
-import SafariServices
 
 final class SignUpViewController: UIViewController {
     
     //MARK: Vars
-    private var builder: CredentialsBuilder
-    private let signUpBlock: (CredentialsBuilder)->()
+    var delegate: SignUpViewControllerDelegate?
+    
+    var textFieldUserNameDelegate: TextFieldDelegate? {
+        didSet {
+            textFieldName.delegate = textFieldUserNameDelegate
+        }
+    }
+    
+    var textFieldEmailDelegate: TextFieldDelegate? {
+        didSet {
+            textFieldEmail.delegate = textFieldEmailDelegate
+        }
+    }
+    
+    var textFieldPasswordDelegate: TextFieldDelegate? {
+        didSet {
+            textFieldPassword.delegate = textFieldPasswordDelegate
+        }
+    }
+    
+    var textFieldConfirmPasswordDelegate: TextFieldDelegate? {
+        didSet {
+            textFieldConfirmPassword.delegate = textFieldConfirmPasswordDelegate
+        }
+    }
     
     //MARK: View component
     private lazy var stackViewContent: UIStackView = {
@@ -58,52 +80,41 @@ final class SignUpViewController: UIViewController {
     }()
     
     private(set) lazy var textFieldName: UITextField = {
-        let view = CustomTextField {[weak self] text in
-            self?.builder.setName(name: text)
-        }
+        let view = CustomTextField()
         view.autocapitalizationType = .words
         view.autocorrectionType = .no
         view.setPlaceholder(text: "Name")
+        view.returnKeyType = .next
+        view.textContentType = .name
         return view
     }()
     
     private(set) lazy var textFieldEmail: UITextField = {
-        let view = CustomTextField{[weak self] text in
-            do {
-                try self?.builder.setEmail(email: text)
-            } catch let error {
-                self?.alert("Validation Error", message: error.localizedDescription)
-            }
-        }
+        let view = CustomTextField()
         view.keyboardType = .emailAddress
         view.autocapitalizationType = .none
+        view.textContentType = .emailAddress
+        view.autocorrectionType = .no
         view.setPlaceholder(text: "Email Address")
+        view.returnKeyType = .next
         return view
     }()
     
     private(set) lazy var textFieldPassword: UITextField = {
-        let view = CustomTextField{[weak self] text in
-            do {
-                try self?.builder.setPassword(password: text)
-            } catch let error {
-                self?.alert("Error", message: error.localizedDescription)
-            }
-        }
+        let view = CustomTextField()
         view.setPlaceholder(text: "Password")
         view.isSecureTextEntry = true
+        view.returnKeyType = .next
+        view.textContentType = .password
         return view
     }()
     
     private(set) lazy var textFieldConfirmPassword: UITextField = {
-        let view = CustomTextField{[weak self] text in
-            do {
-                try self?.builder.setConfirmPassword(password: text)
-            } catch let error {
-                self?.alert("Error", message: error.localizedDescription)
-            }
-        }
+        let view = CustomTextField()
         view.setPlaceholder(text: "Confirm Password")
         view.isSecureTextEntry = true
+        view.textContentType = .password
+        view.returnKeyType = .done
         return view
     }()
         
@@ -143,9 +154,7 @@ final class SignUpViewController: UIViewController {
     }()
     
     //MARK: Init
-    init(builder: CredentialsBuilder, signUpBlock: @escaping(CredentialsBuilder)->()) {
-        self.builder = builder
-        self.signUpBlock = signUpBlock
+    init() {
         super.init(nibName: nil, bundle: nil)
         setupView()
         
@@ -154,11 +163,7 @@ final class SignUpViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
 
     }
-    
-    private init() {
-        fatalError("Can't be initialized without required parameters")
-    }
-    
+        
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -187,13 +192,13 @@ final class SignUpViewController: UIViewController {
     //MARK: Action
     @objc func submitHandler(sender: UIButton) {
         view.endEditing(true)
-        signUpBlock(builder)
+        delegate?.didTapSignUpButton()
     }
     
     
     @objc func toggleCheckboxSelection() {
         termsConditionsCheckBox.isSelected = !termsConditionsCheckBox.isSelected
-        builder.setTicked(isTicked: termsConditionsCheckBox.isSelected)
+        delegate?.didToggleTermsAndConditionCheckbox(value: termsConditionsCheckBox.isSelected)
     }
     
     //MARK: Helpers

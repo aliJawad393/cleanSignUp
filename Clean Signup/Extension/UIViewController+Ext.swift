@@ -8,9 +8,8 @@ extension UIViewController {
             
         }
         alertController.addAction(OKAction)
-        DispatchQueue.main.async {
-            self.present(alertController, animated: true, completion: nil)
-        }
+        self.present(alertController, animated: true, completion: nil)
+        
     }
 }
 

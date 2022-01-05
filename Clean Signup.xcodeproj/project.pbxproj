@@ -3,10 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4162B1B82758A2BD00721716 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162B1B72758A2BD00721716 /* ViewControllerFactory.swift */; };
+		4162B1BA2758DD0600721716 /* iOSViewControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162B1B92758DD0600721716 /* iOSViewControllerFactoryTests.swift */; };
+		4162B1BD2758F51F00721716 /* SignUpViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162B1BC2758F51F00721716 /* SignUpViewControllerDelegate.swift */; };
+		4162B1BF2758F77000721716 /* TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4162B1BE2758F77000721716 /* TextFieldDelegate.swift */; };
+		41762A64275644F3007AE038 /* SignUpViewControllerTextFieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41762A63275644F3007AE038 /* SignUpViewControllerTextFieldsTests.swift */; };
+		41762A66275647C9007AE038 /* CredentialsBuilderImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41762A65275647C9007AE038 /* CredentialsBuilderImplementations.swift */; };
+		41762A6827564D57007AE038 /* UITextFieldTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41762A6727564D57007AE038 /* UITextFieldTestHelpers.swift */; };
+		417CF1F52775A43300194E2D /* iOSSnapshotTestCase in Frameworks */ = {isa = PBXBuildFile; productRef = 417CF1F42775A43300194E2D /* iOSSnapshotTestCase */; };
+		417CF1F72775A56900194E2D /* Clean_SignupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417CF1F62775A56900194E2D /* Clean_SignupUITests.swift */; };
+		417CF1F92775A68400194E2D /* SignUpViewControllerSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417CF1F82775A68400194E2D /* SignUpViewControllerSnapshotTests.swift */; };
+		41B55AA227550A7A0075F1D5 /* ViewControllerPresentationSpy.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41B55AA127550A7A0075F1D5 /* ViewControllerPresentationSpy.xcframework */; };
+		41B55AA327550A880075F1D5 /* ViewControllerPresentationSpy.xcframework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 41B55AA127550A7A0075F1D5 /* ViewControllerPresentationSpy.xcframework */; };
 		F144F71C26BC1A98007AD68B /* PasswordValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144F71B26BC1A98007AD68B /* PasswordValidatorTests.swift */; };
 		F15EDDD726C704680040EA42 /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15EDDD626C704680040EA42 /* SignUpViewControllerTests.swift */; };
 		F1B03E70268DE3F3008A7971 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E6F268DE3F3008A7971 /* AppDelegate.swift */; };
@@ -15,7 +27,6 @@
 		F1B03E79268DE3F5008A7971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B03E78268DE3F5008A7971 /* Assets.xcassets */; };
 		F1B03E7C268DE3F5008A7971 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B03E7A268DE3F5008A7971 /* LaunchScreen.storyboard */; };
 		F1B03E87268DE3F5008A7971 /* UserCredentialsBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E86268DE3F5008A7971 /* UserCredentialsBuilderTests.swift */; };
-		F1B03E92268DE3F5008A7971 /* Clean_SignupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03E91268DE3F5008A7971 /* Clean_SignupUITests.swift */; };
 		F1B03EAF268DE5BC008A7971 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03EAE268DE5BC008A7971 /* CustomTextField.swift */; };
 		F1B03EB5268DE662008A7971 /* UIFont+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B03EB4268DE662008A7971 /* UIFont+Ext.swift */; };
 		F1B03ECE268DE6D8008A7971 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1B03EBC268DE6D8008A7971 /* Montserrat-LightItalic.ttf */; };
@@ -64,7 +75,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		41B55A942754FD240075F1D5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				41B55AA327550A880075F1D5 /* ViewControllerPresentationSpy.xcframework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4162B1B72758A2BD00721716 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		4162B1B92758DD0600721716 /* iOSViewControllerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTests.swift; sourceTree = "<group>"; };
+		4162B1BC2758F51F00721716 /* SignUpViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerDelegate.swift; sourceTree = "<group>"; };
+		4162B1BE2758F77000721716 /* TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDelegate.swift; sourceTree = "<group>"; };
+		41762A63275644F3007AE038 /* SignUpViewControllerTextFieldsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTextFieldsTests.swift; sourceTree = "<group>"; };
+		41762A65275647C9007AE038 /* CredentialsBuilderImplementations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsBuilderImplementations.swift; sourceTree = "<group>"; };
+		41762A6727564D57007AE038 /* UITextFieldTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldTestHelpers.swift; sourceTree = "<group>"; };
+		417CF1F62775A56900194E2D /* Clean_SignupUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clean_SignupUITests.swift; sourceTree = "<group>"; };
+		417CF1F82775A68400194E2D /* SignUpViewControllerSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerSnapshotTests.swift; sourceTree = "<group>"; };
+		41B55AA127550A7A0075F1D5 /* ViewControllerPresentationSpy.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ViewControllerPresentationSpy.xcframework; sourceTree = "<group>"; };
 		F144F71B26BC1A98007AD68B /* PasswordValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidatorTests.swift; sourceTree = "<group>"; };
 		F15EDDD626C704680040EA42 /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		F1B03E6C268DE3F3008A7971 /* Clean Signup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clean Signup.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +112,6 @@
 		F1B03E86268DE3F5008A7971 /* UserCredentialsBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCredentialsBuilderTests.swift; sourceTree = "<group>"; };
 		F1B03E88268DE3F5008A7971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1B03E8D268DE3F5008A7971 /* Clean SignupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clean SignupUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1B03E91268DE3F5008A7971 /* Clean_SignupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clean_SignupUITests.swift; sourceTree = "<group>"; };
 		F1B03E93268DE3F5008A7971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1B03EAE268DE5BC008A7971 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F1B03EB4268DE662008A7971 /* UIFont+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Ext.swift"; sourceTree = "<group>"; };
@@ -123,6 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				417CF1F52775A43300194E2D /* iOSSnapshotTestCase in Frameworks */,
+				41B55AA227550A7A0075F1D5 /* ViewControllerPresentationSpy.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +171,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4162B1B62758A29D00721716 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				4162B1B72758A2BD00721716 /* ViewControllerFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		4162B1BB2758F50900721716 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				4162B1BC2758F51F00721716 /* SignUpViewControllerDelegate.swift */,
+				4162B1BE2758F77000721716 /* TextFieldDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		41762A6927564E79007AE038 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				41762A65275647C9007AE038 /* CredentialsBuilderImplementations.swift */,
+				41762A6727564D57007AE038 /* UITextFieldTestHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F1B03E63268DE3F2008A7971 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +220,7 @@
 		F1B03E6E268DE3F3008A7971 /* Clean Signup */ = {
 			isa = PBXGroup;
 			children = (
+				4162B1B62758A29D00721716 /* Factory */,
 				F1BDB07926920A390017484C /* Validator */,
 				F1B03EE6268DE84B008A7971 /* Builder */,
 				F1B03EE5268DE7A5008A7971 /* View */,
@@ -174,10 +236,15 @@
 		F1B03E85268DE3F5008A7971 /* Clean SignupTests */ = {
 			isa = PBXGroup;
 			children = (
+				41762A6927564E79007AE038 /* Helpers */,
+				41B55AA127550A7A0075F1D5 /* ViewControllerPresentationSpy.xcframework */,
 				F1BA9EE026B94F6700E4C35A /* ValidatorTests.swift */,
 				F1B03E86268DE3F5008A7971 /* UserCredentialsBuilderTests.swift */,
 				F144F71B26BC1A98007AD68B /* PasswordValidatorTests.swift */,
 				F15EDDD626C704680040EA42 /* SignUpViewControllerTests.swift */,
+				41762A63275644F3007AE038 /* SignUpViewControllerTextFieldsTests.swift */,
+				4162B1B92758DD0600721716 /* iOSViewControllerFactoryTests.swift */,
+				417CF1F82775A68400194E2D /* SignUpViewControllerSnapshotTests.swift */,
 				F1B03E88268DE3F5008A7971 /* Info.plist */,
 			);
 			path = "Clean SignupTests";
@@ -186,7 +253,7 @@
 		F1B03E90268DE3F5008A7971 /* Clean SignupUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F1B03E91268DE3F5008A7971 /* Clean_SignupUITests.swift */,
+				417CF1F62775A56900194E2D /* Clean_SignupUITests.swift */,
 				F1B03E93268DE3F5008A7971 /* Info.plist */,
 			);
 			path = "Clean SignupUITests";
@@ -264,8 +331,9 @@
 		F1B03EE5268DE7A5008A7971 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F1B03EAE268DE5BC008A7971 /* CustomTextField.swift */,
 				F1B03E73268DE3F3008A7971 /* SignUpViewController.swift */,
+				F1B03EAE268DE5BC008A7971 /* CustomTextField.swift */,
+				4162B1BB2758F50900721716 /* Delegate */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,6 +374,8 @@
 			dependencies = (
 			);
 			name = "Clean Signup";
+			packageProductDependencies = (
+			);
 			productName = "Clean Signup";
 			productReference = F1B03E6C268DE3F3008A7971 /* Clean Signup.app */;
 			productType = "com.apple.product-type.application";
@@ -317,6 +387,7 @@
 				F1B03E7E268DE3F5008A7971 /* Sources */,
 				F1B03E7F268DE3F5008A7971 /* Frameworks */,
 				F1B03E80268DE3F5008A7971 /* Resources */,
+				41B55A942754FD240075F1D5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -324,6 +395,9 @@
 				F1B03E84268DE3F5008A7971 /* PBXTargetDependency */,
 			);
 			name = "Clean SignupTests";
+			packageProductDependencies = (
+				417CF1F42775A43300194E2D /* iOSSnapshotTestCase */,
+			);
 			productName = "Clean SignupTests";
 			productReference = F1B03E82268DE3F5008A7971 /* Clean SignupTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -364,6 +438,7 @@
 					};
 					F1B03E8C268DE3F5008A7971 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1310;
 						TestTargetID = F1B03E6B268DE3F3008A7971;
 					};
 				};
@@ -377,6 +452,9 @@
 				Base,
 			);
 			mainGroup = F1B03E63268DE3F2008A7971;
+			packageReferences = (
+				417CF1F32775A43300194E2D /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */,
+			);
 			productRefGroup = F1B03E6D268DE3F3008A7971 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -438,9 +516,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1B03EAF268DE5BC008A7971 /* CustomTextField.swift in Sources */,
+				4162B1B82758A2BD00721716 /* ViewControllerFactory.swift in Sources */,
 				F1BDB08326920A8D0017484C /* ValidationError.swift in Sources */,
+				4162B1BD2758F51F00721716 /* SignUpViewControllerDelegate.swift in Sources */,
 				F1BDB07B26920A460017484C /* Validator.swift in Sources */,
 				F1B03EE8268DE87A008A7971 /* UserCredentialsBuilder.swift in Sources */,
+				4162B1BF2758F77000721716 /* TextFieldDelegate.swift in Sources */,
 				F1B03E74268DE3F3008A7971 /* SignUpViewController.swift in Sources */,
 				F1B03E70268DE3F3008A7971 /* AppDelegate.swift in Sources */,
 				F1B03E72268DE3F3008A7971 /* SceneDelegate.swift in Sources */,
@@ -458,8 +539,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1BA9EE126B94F6700E4C35A /* ValidatorTests.swift in Sources */,
+				41762A64275644F3007AE038 /* SignUpViewControllerTextFieldsTests.swift in Sources */,
 				F1B03E87268DE3F5008A7971 /* UserCredentialsBuilderTests.swift in Sources */,
+				4162B1BA2758DD0600721716 /* iOSViewControllerFactoryTests.swift in Sources */,
 				F15EDDD726C704680040EA42 /* SignUpViewControllerTests.swift in Sources */,
+				41762A66275647C9007AE038 /* CredentialsBuilderImplementations.swift in Sources */,
+				417CF1F92775A68400194E2D /* SignUpViewControllerSnapshotTests.swift in Sources */,
+				41762A6827564D57007AE038 /* UITextFieldTestHelpers.swift in Sources */,
 				F144F71C26BC1A98007AD68B /* PasswordValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,7 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B03E92268DE3F5008A7971 /* Clean_SignupUITests.swift in Sources */,
+				417CF1F72775A56900194E2D /* Clean_SignupUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +743,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Clean\\ SignupTests",
+				);
 				INFOPLIST_FILE = "Clean SignupTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -678,6 +768,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Clean\\ SignupTests",
+				);
 				INFOPLIST_FILE = "Clean SignupTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -697,6 +791,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Clean SignupUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -706,6 +801,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com..Clean-SignupUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Clean Signup";
@@ -716,6 +812,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Clean SignupUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -771,6 +868,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		417CF1F32775A43300194E2D /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uber/ios-snapshot-test-case";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		417CF1F42775A43300194E2D /* iOSSnapshotTestCase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 417CF1F32775A43300194E2D /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */;
+			productName = iOSSnapshotTestCase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F1B03E64268DE3F2008A7971 /* Project object */;
 }
