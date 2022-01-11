@@ -14,6 +14,10 @@ A repository demonstrating SOLID Principles and other good design practices for 
   * Builder - to build UserCredentials in steps
   * Composite - for validating user input
   * Abstract factory and Factory to create view controller
+* UI (Using UIKit)
+  * StackViews
+  * Autolayouts
+
 
 # Screenshot
 
