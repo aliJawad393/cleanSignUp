@@ -14,3 +14,7 @@ A repository demonstrating SOLID Principles and other good design practices for 
   * Builder - to build UserCredentials in steps
   * Composite - for validating user input
   * Abstract factory and Factory to create view controller
+
+# Screenshot
+
+![Alt text](https://i.postimg.cc/sxwxWwyG/test-sign-Up-View-Controller-Appearance-initial-State-3x.png "Screenshot")
