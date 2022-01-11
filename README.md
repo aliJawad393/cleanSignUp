@@ -1,4 +1,4 @@
-# cleanSignup #Swift
+# cleanSignup #Swift #CI #UnitTest #CleanCode
 A repository demonstrating SOLID Principles and other good design practices for signup module and user input validation with following characteristics:
 * Unit Tests
   * Testing UIKit (with UI created programatically)
